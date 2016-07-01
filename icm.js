@@ -15,11 +15,11 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
        
        args.forEach(function(curE){
         var timestamp = Date.parse(curE.TIMESTAMP).toISOString();
-        var x = curE.POS_X.replace(",",".") 
-        var y = curE.POS_Y.replace(",",".") 
+        var posx = curE.POS_X.replace(",",".") 
+        var posy = curE.POS_Y.replace(",",".") 
       string += 'wpt lat="' + x + '" lon="'+y+'">\n<time>'+timestamp+'</time>\n</wpt>\n';
       })
-      string += 'wpt lat="' + x + '" lon="'+y+'">\n<time>'+timestamp+'</time>\n</wpt>\n';
+      string += '</gpx>\n';
       
       console.log(string);
        //mapObj.data.toGeoJson(function(args){console.log(args);});
