@@ -12,10 +12,11 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
        //console.log(arguments[0]);
        args = arguments[0]
        console.log(args);
-      args.foreach(function(curE){
-       var timestamp = Date.parse(curE.TIMESTAMP).toISOString()
-       var x = curE.POS_X.replace(",",".") 
-       var y = curE.POS_Y.replace(",",".") 
+       
+       args.forEach(function(curE){
+        var timestamp = Date.parse(curE.TIMESTAMP).toISOString();
+        var x = curE.POS_X.replace(",",".") 
+        var y = curE.POS_Y.replace(",",".") 
       string += 'wpt lat="' + x + '" lon="'+y+'">\n<time>'+timestamp+'</time>\n</wpt>\n';
       })
       string += 'wpt lat="' + x + '" lon="'+y+'">\n<time>'+timestamp+'</time>\n</wpt>\n';
