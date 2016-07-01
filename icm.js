@@ -1,27 +1,37 @@
-temp=setInterval(function(){Object.keys(window).forEach( function(element){
+patchInterval=setInterval(function(){Object.keys(window).forEach( function(element){
  if(element.indexOf("tracking3_route")>-1)
  {
    if(window[element].patched === true)
-   { clearInterval(temp); return}
+   { clearInterval(patchInterval); return}
    console.log("tracking_route gefunden. Patching");
    (function(save){
     window[element].patched = true
     window[element].ParseRoute = function(){
-      string='<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\r\n<gpx version="1.1" creator="ICM TEST">\r\n<metadata>\r\n<name>ICM TEST</name>\r\n</metadata>\r\n';
+      GPXString='<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\r\n<gpx version="1.1" creator="ICM TEST">\r\n<metadata>\r\n<name>ICM TEST</name>\r\n</metadata>\r\n';
       if(jQuery.isArray(arguments[0]) && arguments[0].length > 2)
        //console.log(arguments[0]);
-       args = arguments[0]
-       console.log(args);
+       //args = arguments[0]
+       //console.log(args);
        
        args.forEach(function(curE){
         var timestamp = Date.parse(curE.TIMESTAMP).toISOString();
         var posx = curE.POS_X.replace(",",".") 
         var posy = curE.POS_Y.replace(",",".") 
-      string += '<wpt lat="' + posx + '" lon="'+ posy +'">\r\n<time>' + timestamp + '</time>\r\n</wpt>\r\n';
+      GPXString += '<wpt lat="' + posx + '" lon="'+ posy +'">\r\n<time>' + timestamp + '</time>\r\n</wpt>\r\n';
       })
-      string += '</gpx>\r\n';
+      GPXString += '</gpx>\r\n';
       
-      console.log(string);
+      gpxbutton = $("#views div:first-child").clone()
+      var gpximg = gpxbutton.find("img")
+      gpxbutton.attr("data-qtitle","GPX Export")
+      gpxbutton.attr("title","GPX Export")
+      gpximg.attr("src","https://cdn3.iconfinder.com/data/icons/line/36/box_expand-64.png")
+      gpxbutton.append(document.createElement("a")).append(gpximg.detach())
+      gpxbuttin.find("a").attr("href","data:text/plain;charset=utf8,"+encodeURICompoennt(GPXData));
+      gpxbuttin.find("a").attr("download", "export.gpx");
+      gpxbutton.appendTo($("#views"))
+       
+      //console.log(string);
        //mapObj.data.toGeoJson(function(args){console.log(args);});
        //mapObj.data.toGeoJson(function(args[0]){console.log(args[0]);});
      save.call(this, arguments);
@@ -29,7 +39,7 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
   }(window[element].ParseRoute))
   console.log("Patch beendet");
  }
-})}, 3000)
+})}, 500)
 
 google.maps.Map.prototype.toGeoJson=function(callback){
   var geo={"type": "FeatureCollection","features": []},
