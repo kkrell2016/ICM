@@ -11,7 +11,7 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
        //console.log(arguments[0]);
        args = arguments
        mapObj.data.toGeoJson(function(args){console.log(args);});
-       mapObj.data.toGeoJson(function(args[0]){console.log(args[0]);});
+       //mapObj.data.toGeoJson(function(args[0]){console.log(args[0]);});
      save.call(this, arguments);
     };
   }(window[element].ParseRoute))
@@ -19,7 +19,7 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
  }
 })}, 3000)
 
-google.maps.Map.prototype.getGeoJson=function(callback){
+google.maps.Map.prototype.toGeoJson=function(callback){
   var geo={"type": "FeatureCollection","features": []},
       fx=function(g,t){
 
