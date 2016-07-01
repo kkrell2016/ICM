@@ -1,8 +1,11 @@
-var temp=setInterval(function(){Object.keys(window).forEach( function(element){
+temp=setInterval(function(){Object.keys(window).forEach( function(element){
  if(element.indexOf("tracking3_route")>-1)
  {
+   if(window[element].patched === true)
+   { clearInterval(temp); return}
    console.log("tracking_route gefunden. Patching");
    (function(save){
+    window[element].patched = true
     window[element].ParseRoute = function(){
      if(jQuery.isArray(arguments) && arguments.length > 2)
       console.log(arguments);
