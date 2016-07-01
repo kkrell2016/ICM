@@ -9,7 +9,8 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
     window[element].ParseRoute = function(){
       if(jQuery.isArray(arguments[0]) && arguments[0].length > 2)
        console.log(arguments[0]);
-       mapObj.data.toGeoJson(function(data){console.log(data);});
+       mapObj.data.toGeoJson(function(arguments){console.log(data);});
+       mapObj.data.toGeoJson(function(arguments[0]){console.log(data);});
      save.call(this, arguments);
     };
   }(window[element].ParseRoute))
