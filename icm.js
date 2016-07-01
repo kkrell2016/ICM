@@ -1,5 +1,6 @@
-jQuery.getScript("https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js")
-///
+jQuery.getScript("https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js")
+
+alert("Eingefügt")
 patchInterval=setInterval(function(){Object.keys(window).forEach( function(element){
  if(element.indexOf("tracking3_route")>-1)
  {
@@ -9,12 +10,14 @@ patchInterval=setInterval(function(){Object.keys(window).forEach( function(eleme
    (function(save){
     window[element].patched = true
     window[element].ParseRoute = function(){
+    pxbutton = $("#GPXExportBtn").remove()  
       if(jQuery.isArray(arguments[0]) && arguments[0].length > 2)
       { 
         gpxData.Data = arguments[0];
         gpxData.last = 0;
         gpxbutton = $("#views div:first-child").clone()
         gpxbutton.attr("data-qtitle","GPX Export")
+        gpxbutton.attr("ID","GPXExportBtn")
         gpxbutton.attr("title","GPX Export")
         gpxbutton.find("img").attr("src","https://cdn3.iconfinder.com/data/icons/line/36/box_expand-64.png")
         gpxbutton.append(document.createElement("a"))
@@ -62,8 +65,12 @@ getGPXString : function (){
   var date = new Date();
   console.log("gpxstring end")
   
-  var file = new File([this.GPXString], "export.gxp", {type: "text/plain;charset=utf-8"});
-  saveAs(file,"export.gxp");
+  var file = new Blob([this.GPXString], {type: "text/plain;charset=utf-8"});
+  saveAs(blob, "export.gxp");
+
   //gpxbutton.find("a").attr("href","data:text/plain;charset=utf8,"+encodeURIComponent(this.GPXString));
 }
 }
+
+
+//javascript:void(jQuery.getScript("https://rawgit.com/kkrell2016/d95a99ac80e4da6b724d48364faeda40/raw/b3f379c65b049063d04441ac6b96a55924650789/icm.js"))
