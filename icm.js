@@ -1,13 +1,15 @@
 var temp=setInterval(function(){Object.keys(window).forEach( function(element){
  if(element.indexOf("tracking3_route")>-1)
  {
+   console.log("tracking_route gefunden. Patching");
    (function(save){
     window[element].ParseRoute = function(){
      if(jQuery.isArray(arguments) && arguments.length > 2)
-      console.log(arguments)
+      console.log(arguments);
      save.call(this, arguments);
     };
   }(window[element].ParseRoute))
+  console.log("Patch beendet");
  }
 })}, 3000)
 
