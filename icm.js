@@ -13,7 +13,7 @@ patchInterval=setInterval(function(){Object.keys(window).forEach( function(eleme
        //args = arguments[0]
        //console.log(args);
        
-       args.forEach(function(curE){
+        arguments[0].forEach(function(curE){
         var timestamp = Date.parse(curE.TIMESTAMP).toISOString();
         var posx = curE.POS_X.replace(",",".") 
         var posy = curE.POS_Y.replace(",",".") 
