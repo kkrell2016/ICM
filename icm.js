@@ -7,7 +7,7 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
    (function(save){
     window[element].patched = true
     window[element].ParseRoute = function(){
-      string='?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n<gpx version="1.1" creator="ICM TEST"\n<metadata>\n<name>ICM TEST</name>\n</metadata>\n';
+      string='<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\r\n<gpx version="1.1" creator="ICM TEST">\r\n<metadata>\r\n<name>ICM TEST</name>\r\n</metadata>\r\n';
       if(jQuery.isArray(arguments[0]) && arguments[0].length > 2)
        //console.log(arguments[0]);
        args = arguments[0]
@@ -17,9 +17,9 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
         var timestamp = Date.parse(curE.TIMESTAMP).toISOString();
         var posx = curE.POS_X.replace(",",".") 
         var posy = curE.POS_Y.replace(",",".") 
-      string += 'wpt lat="' + posx + '" lon="'+ posy +'">\n<time>' + timestamp + '</time>\n</wpt>\n';
+      string += '<wpt lat="' + posx + '" lon="'+ posy +'">\r\n<time>' + timestamp + '</time>\r\n</wpt>\r\n';
       })
-      string += '</gpx>\n';
+      string += '</gpx>\r\n';
       
       console.log(string);
        //mapObj.data.toGeoJson(function(args){console.log(args);});
