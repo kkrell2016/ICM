@@ -17,7 +17,7 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
         var timestamp = Date.parse(curE.TIMESTAMP).toISOString();
         var posx = curE.POS_X.replace(",",".") 
         var posy = curE.POS_Y.replace(",",".") 
-      string += 'wpt lat="' + x + '" lon="'+y+'">\n<time>'+timestamp+'</time>\n</wpt>\n';
+      string += 'wpt lat="' + posx + '" lon="'+ posy +'">\n<time>' + timestamp + '</time>\n</wpt>\n';
       })
       string += '</gpx>\n';
       
