@@ -65,12 +65,9 @@ getGPXString : function (){
   var date = new Date();
   console.log("gpxstring end")
   
-  var file = new Blob([this.GPXString], {type: "text/plain;charset=utf-8"});
+  var blob = new Blob([this.GPXString], {type: "text/plain;charset=utf-8"});
   saveAs(blob, "export.gxp");
 
   //gpxbutton.find("a").attr("href","data:text/plain;charset=utf8,"+encodeURIComponent(this.GPXString));
 }
 }
-
-
-//javascript:void(jQuery.getScript("https://rawgit.com/kkrell2016/d95a99ac80e4da6b724d48364faeda40/raw/b3f379c65b049063d04441ac6b96a55924650789/icm.js"))
