@@ -7,10 +7,21 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
    (function(save){
     window[element].patched = true
     window[element].ParseRoute = function(){
+      string='?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n<gpx version="1.1" creator="ICM TEST"\n<metadata>\n<name>ICM TEST</name>\n</metadata>\n';
       if(jQuery.isArray(arguments[0]) && arguments[0].length > 2)
        //console.log(arguments[0]);
-       args = arguments
-       mapObj.data.toGeoJson(function(args){console.log(args);});
+       args = arguments[0]
+       console.log(args);
+      args.foreach(function(curE){
+       var timestamp = Date.parse(curE.TIMESTAMP).toISOString()
+       var x = curE.POS_X.replace(",",".") 
+       var y = curE.POS_Y.replace(",",".") 
+      string += 'wpt lat="' + x + '" lon="'+y+'">\n<time>'+timestamp+'</time>\n</wpt>\n';
+      })
+      string += 'wpt lat="' + x + '" lon="'+y+'">\n<time>'+timestamp+'</time>\n</wpt>\n';
+      
+      console.log(string);
+       //mapObj.data.toGeoJson(function(args){console.log(args);});
        //mapObj.data.toGeoJson(function(args[0]){console.log(args[0]);});
      save.call(this, arguments);
     };
