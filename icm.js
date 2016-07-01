@@ -39,7 +39,7 @@ patchInterval=setInterval(function(){Object.keys(window).forEach( function(eleme
   }(window[element].ParseRoute))
   console.log("Patch beendet");
  }
-})}, 500)
+})}, 3000)
 
 google.maps.Map.prototype.toGeoJson=function(callback){
   var geo={"type": "FeatureCollection","features": []},
