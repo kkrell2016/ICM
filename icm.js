@@ -3,7 +3,8 @@ var temp=setInterval(function(){Object.keys(window).forEach( function(element){
  {
    (function(save){
     window[element].ParseRoute = function(){
-     console.log(arguments);
+     if(jQuery.isArray(arguments) && arguments.length > 2)
+      console.log(arguments)
      save.call(this, arguments);
     };
   }(window[element].ParseRoute))
