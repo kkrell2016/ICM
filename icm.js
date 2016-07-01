@@ -7,9 +7,8 @@ temp=setInterval(function(){Object.keys(window).forEach( function(element){
    (function(save){
     window[element].patched = true
     window[element].ParseRoute = function(){
-      console.log(jQuery.isArray(arguments));
-      console.log(arguments.length);
-      console.log(arguments);
+      if(jQuery.isArray(arguments[0]) && arguments[0].length > 2)
+       console.log(arguments[0]);
      save.call(this, arguments);
     };
   }(window[element].ParseRoute))
