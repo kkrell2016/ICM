@@ -71,3 +71,5 @@ getGPXString : function (){
   //gpxbutton.find("a").attr("href","data:text/plain;charset=utf8,"+encodeURIComponent(this.GPXString));
 }
 }
+
+//void(jQuery.getScript("https://rawgit.com/kkrell2016/d95a99ac80e4da6b724d48364faeda40/raw/ea2280f9906bb6a1c7233754b319353fd6a05ea6/icm.js"))
