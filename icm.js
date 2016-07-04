@@ -67,7 +67,7 @@ getGPXString : function (){
   console.log("gpxstring end")
   
   var blob = new Blob([this.GPXString], {type: "text/plain;charset=utf-8"});
-  saveAs(blob, "export.gxp");
+  saveAs(blob, "export.gpx");
 
   //gpxbutton.find("a").attr("href","data:text/plain;charset=utf8,"+encodeURIComponent(this.GPXString));
 }
