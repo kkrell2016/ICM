@@ -1,5 +1,5 @@
 jQuery.getScript("https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js")
-
+//---//
 alert("Eingefügt")
 patchInterval=setInterval(function(){Object.keys(window).forEach( function(element){
  if(element.indexOf("tracking3_route")>-1)
