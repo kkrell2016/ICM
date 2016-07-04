@@ -1,5 +1,6 @@
+//FileSaver Script damit Daten direkt aus JS heraus generiert werden können. Spart man sich einen Server Roundtrip
 jQuery.getScript("https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js")
-//---//
+//04.07.2016 Import von Gist nach Git//
 alert("Eingefügt")
 patchInterval=setInterval(function(){Object.keys(window).forEach( function(element){
  if(element.indexOf("tracking3_route")>-1)
