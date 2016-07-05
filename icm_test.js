@@ -52,6 +52,7 @@ patchInterval=setInterval(function(){Object.keys(window).forEach( function(eleme
         })
       console.log(y)
       patch_DrawSpecials.call();
+      console.log(y)
     };
   }(window[element].DrawRouteSpecials))
   console.log("Patch beendet");
