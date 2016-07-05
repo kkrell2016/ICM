@@ -50,7 +50,6 @@ patchInterval=setInterval(function(){Object.keys(window).forEach( function(eleme
                 console.log(myvar)
             }
         })*/
-      console.log(y)
       patch_DrawSpecials.call();
       console.log(y)
     };
