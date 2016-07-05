@@ -66,7 +66,7 @@ getGPXString : function (){
     //timestamp = timestamp.//toISOString(); Funktioniert nicht wirklich immer. 
     var lat = curE.getPosition().lat() 
     var lon = curE.getPosition().lng() 
-    this.GPXString += '<wpt lat="' + lat + '" lon="'+ lon +'">\r\n<name>' + curE.id + '</name>\r\n</wpt>\r\n';
+    this.GPXString += '<wpt lat="' + lat + '" lon="'+ lon +'">\r\n<name>' + curE.id + '</name>\r\n<sym>Wegpunkt</sym>\r\n</wpt>\r\n';
     }
   this.GPXString += '</gpx>\r\n';
   
