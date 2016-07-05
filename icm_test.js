@@ -32,21 +32,24 @@ patchInterval=setInterval(function(){Object.keys(window).forEach( function(eleme
    (function(patch_DrawSpecials){
     window[element].patched = true
     window[element].DrawRouteSpecials = function(){
-/*    pxbutton = $("#GPXExportBtn").remove()  
-      if(jQuery.isArray(arguments[0]) && arguments[0].length > 2)
-      { 
-        gpxData.Data = arguments[0];
-        gpxbutton = $("#views div:first-child").clone()
-        gpxbutton.attr("data-qtitle","GPX Export")
-        gpxbutton.attr("ID","GPXExportBtn")
-        gpxbutton.attr("title","GPX Export")
-        gpxbutton.find("img").attr("src","https://cdn3.iconfinder.com/data/icons/line/36/box_expand-64.png")
-        gpxbutton.append(document.createElement("a"))
-        gpxbutton.find("a").attr("download", "export.gpx");
-        gpxbutton.appendTo($("#views"))
-        gpxbutton.find("a").append(gpxbutton.find("img").detach())
-        gpxbutton.click(function(){gpxData.getGPXString();gpxbutton.remove()}) 
-      }*/
+        var H = $("*[data-day][class~=checked]", k).attr("data-day");
+        var J = $("*[data-day][class~=checked]", k).attr("data-userid");
+        var K = $("*[data-day][class~=checked]", k).attr("data-vehicleid");
+        var G = $("*[data-day][class~=checked]", k).attr("data-boxid");
+        var I = i.GetTimeFilter(H);
+        f5.Query({
+            query: "Tracking3/RouteSpecials",
+            post_data: {
+                day: H,
+                userId: J,
+                timeFilterFrom: I.from,
+                timeFilterTo: I.to
+            },
+            callback: function(L) {
+                myvar = JSON.parse(L).qData;
+                console.log(myvar)
+            }
+        })
       console.log(y)
       patch_DrawSpecials.call();
     };
