@@ -48,6 +48,7 @@ patchInterval=setInterval(function(){Object.keys(window).forEach( function(eleme
         gpxbutton.click(function(){gpxData.getGPXString();gpxbutton.remove()}) 
       }*/
       console.log(arguments)
+      console.log(y)
       patch_DrawSpecials.call(this, arguments);
     };
   }(window[element].DrawRouteSpecials))
