@@ -32,7 +32,7 @@ patchInterval=setInterval(function(){Object.keys(window).forEach( function(eleme
    (function(patch_DrawSpecials){
     window[element].patched = true
     window[element].DrawRouteSpecials = function(){
-        var H = $("*[data-day][class~=checked]", k).attr("data-day");
+  /*      var H = $("*[data-day][class~=checked]", k).attr("data-day");
         var J = $("*[data-day][class~=checked]", k).attr("data-userid");
         var K = $("*[data-day][class~=checked]", k).attr("data-vehicleid");
         var G = $("*[data-day][class~=checked]", k).attr("data-boxid");
@@ -49,7 +49,7 @@ patchInterval=setInterval(function(){Object.keys(window).forEach( function(eleme
                 myvar = JSON.parse(L).qData;
                 console.log(myvar)
             }
-        })
+        })*/
       console.log(y)
       patch_DrawSpecials.call();
       console.log(y)
