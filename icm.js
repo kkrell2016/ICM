@@ -54,7 +54,7 @@ getGPXString : function (){
   var date = new Date();
 //  loadingID = f5.ShowLoading()
 //  loadingdialog = $("#loading_inner_"+loadingID).find("span")
-  this.GPXString='<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\r\n<gpx version="1.1" creator="ICM TEST">\r\n<metadata>\r\n<name>ICM TEST</name>\r\n</metadata>\r\n';
+  this.GPXString='<?xml version="1.0" encoding="UTF-8"?>\r\n<gpx xmlns="http://www.topografix.com/GPX/1/1" creator="ICM TEST" version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">\r\n<metadata>\r\n<name>ICM TEST</name>\r\n</metadata>\r\n';
   var len = this.Data.length
   console.log(len);
   for(var i = 0; i<len/2 ; i++){
