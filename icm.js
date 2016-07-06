@@ -66,7 +66,7 @@ getGPXString : function (){
     //timestamp = timestamp.//toISOString(); Funktioniert nicht wirklich immer. 
     var lat = curE.getPosition().lat() 
     var lon = curE.getPosition().lng() 
-    this.GPXString += '<wpt lat="' + lat + '" lon="'+ lon +'">\r\n<name>' + curE.id + '</name>\r\n<sym>Wegpunkt</sym>\r\n</wpt>\r\n';
+    this.GPXString += '<wpt lat="' + lat + '" lon="'+ lon +'">\r\n<name>' + curE.id + '</name>\r\n<sym>Waypoint</sym>\r\n</wpt>\r\n';
     }
   this.GPXString += '</gpx>\r\n';
   
@@ -77,7 +77,7 @@ getGPXString : function (){
   console.log("gpxstring end")
   
   var blob = new Blob([this.GPXString], {type: "text/plain;charset=utf-8"});
-  saveAs(blob, "export.gxp");
+  saveAs(blob, "export.gpx");
 
   //gpxbutton.find("a").attr("href","data:text/plain;charset=utf8,"+encodeURIComponent(this.GPXString));
 }
