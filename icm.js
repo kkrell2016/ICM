@@ -1,4 +1,4 @@
-jQuery.getScript("https://rawgit.com/eligrey/FileSaver.js/master/FileSaver.js")
+jQuery.getScript("https://krell.li/icm/FileSaver.js")
 //--FOTOS ONLY--//
 alert("Eingefügt")
 patchInterval=setInterval(function(){Object.keys(window).forEach( function(element){
